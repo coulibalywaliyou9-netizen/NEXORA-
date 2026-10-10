@@ -15,8 +15,12 @@ if r["temperature_cellule"] > 90:
     print("ALERTE : cellule trop chaude")
     ok = False
 
-if r["rendement_pct"] > 100:
-    print("ALERTE : rendement impossible")
+if r["rendement_absolu_pct"] > 35:
+    print("ALERTE : rendement absolu impossible pour du silicium")
+    ok = False
+
+if r["rendement_absolu_pct"] < 5:
+    print("ALERTE : rendement absolu trop faible")
     ok = False
 
 if r["temperature_cellule"] < r["temperature_air"]:
@@ -27,5 +31,5 @@ if ok:
     print("Rapport valide. Aucune anomalie.")
 
 print("Temperature cellule :", r["temperature_cellule"])
-print("Rendement :", r["rendement_pct"], "%")
-
+print("Rendement absolu :", r["rendement_absolu_pct"], "%")
+print("Rendement relatif :", r["rendement_relatif_pct"], "%")

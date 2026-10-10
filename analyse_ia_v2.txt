@@ -1,0 +1,50 @@
+**Analyse du rapport PV à Ouagadougou**
+
+| Paramètre | Valeur | Référence / commentaire |
+|-----------|--------|-------------------------|
+| Température de l’air | 31,5 °C | Température ambiante typique en été |
+| Température de la cellule | 56,0 °C | ↑ de ≈ 30 °C par rapport à 25 °C (STC) |
+| Rendement absolu | 17,5 % | Valeur raisonnable pour un module monocrystalique ou polycristallin |
+| Rendement relatif | 87,6 % | % de rendement par rapport à la valeur de référence (STC) |
+| Perte | 12,4 % | Différence entre rendement relatif et 100 % |
+
+---
+
+### 1) Cohérence des valeurs
+
+- **Coefficient de température typique** : Pour la plupart des cellules silicium, le coefficient de température du rendement est ≈ –0,4 % / °C (pour le Pmax).  
+- **Calcul de la perte attendue** :  
+  \( \Delta T = 56,0 °C – 25 °C = 31 °C\)  
+  \( \text{Perte thermique} = 0,4 % / °C × 31 °C ≈ 12,4 %\)  
+  Cela correspond exactement à la perte annoncée (12,4 %) et au rendement relatif de 87,6 % (100 % – 12,4 %).  
+- **Rendement absolu** : Un module de 20 % à STC deviendrait ≈ 17,6 % à 56 °C, ce qui est très proche des 17,5 % observés.  
+- **Conclusion** : Les valeurs sont **cohérentes** et s’expliquent essentiellement par l’effet de la température de fonctionnement.
+
+---
+
+### 2) Principale perte
+
+- **Perte thermique due à la température de la cellule** : ≈ 12,4 % de la puissance d’entrée.  
+- **Autres pertes potentielles** (non identifiées ici) :  
+  - *Mélange d’irradiance* (ombrage ou angle mal optimisé)  
+  - *Mélange de modules* (inégalités de performance)  
+  - *Fuites de courant* (contact, isolation)  
+- **À ce stade, la perte thermique est la seule perte quantifiée, et elle est bien la plus importante**.
+
+---
+
+### 3) Piste d’amélioration
+
+| Option | Description | Avantages | Inconvénients / Coût |
+|--------|-------------|-----------|----------------------|
+| **Optimiser la dissipation thermique** | Installation de dissipateurs, ventilation forcée, support à l’air libre, augmentation de l’angle d’inclinaison (≈ 30 °) pour améliorer la convection | Réduit la température de cellule, augmente la performance | Coût modéré, entretien minimal |
+| **Choix de cellules à faible coefficient de température** | Utiliser des cellules CIGS, CdTe ou perovskite qui ont des coefficients ≈ –0,2 % / °C | Meilleure performance à haute température | Coût parfois plus élevé, disponibilité limitée |
+| **Système de refroidissement actif** | Ventilateurs, radiateurs à eau, refroidissement à eau | Réduction drastique de la température | Coût énergétique supplémentaire, maintenance |
+| **Amélioration de la conception du module** | Optimisation de l’espacement intercellulaire, revêtement anti‑glare, traitement anti‑humidité | Augmente le flux d’irradiance et la stabilité | Coût de production plus élevé |
+| **Suivi et maintenance** | Système de surveillance (MPPT, capteurs de température) | Permet d’ajuster rapidement l’orientation ou d’identifier les modules défaillants | Installation et logiciels |
+
+**Recommandation rapide** :  
+- Commencez par **réduire la température de la cellule** via une meilleure ventilation et un angle de tilt plus adapté.  
+- Si la performance reste limitée, envisagez de **passer à des cellules à coefficient de température plus faible** (CIGS/CdTe).  
+
+En suivant ces pistes, le rendement absolu pourrait approcher davantage des 20 % attendus pour les modules de haute qualité, même dans un climat chaud comme celui d’Ouagadougou.
