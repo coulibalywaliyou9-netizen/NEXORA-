@@ -1,5 +1,6 @@
 import json
 import requests
+import time
 
 with open(".groq_key", "r") as f:
     cle = f.read().strip()
@@ -13,10 +14,19 @@ url = "https://api.groq.com/openai/v1/chat/completions"
 headers = {"Authorization": f"Bearer {cle}", "Content-Type": "application/json"}
 data = {"model": "openai/gpt-oss-20b", "messages": [{"role": "user", "content": question}]}
 
-reponse = requests.post(url, headers=headers, json=data)
-resultat = reponse.json()
+resultat = None
+for essai in range(3):
+    try:
+        reponse = requests.post(url, headers=headers, json=data, timeout=30)
+        resultat = reponse.json()
+        break
+    except Exception as e:
+        print("Tentative", essai + 1, "echouee :", type(e).__name__)
+        time.sleep(3)
 
-if "choices" in resultat:
+if resultat is None:
+    print("ERREUR : impossible de contacter l'API apres 3 essais.")
+elif "choices" in resultat:
     print(resultat["choices"][0]["message"]["content"])
 else:
     print("ERREUR API :", resultat)
