@@ -1,0 +1,16 @@
+**Analyse du rapport pour Ouagadougou**
+
+1. **Cohérence des valeurs**  
+   - *Température ambiante vs. température de la cellule* : À 33,2 °C, une hausse de ~24 °C du module (57,1 °C) est bien dans l’intervalle attendu pour un panneau PV installé à plein soleil, surtout sans refroidissement actif.  
+   - *Rendement (87,2 %) et perte (12,8 %) :* Ces chiffres sont atypiques pour un module photovoltaïque classique (rends 15‑20 %). Il est probable que le « rendement » ne désigne pas la conversion solaire‑électrique mais la performance d’un **système** (par ex. conversion DC‑DC, suivi ou stockage) où 87 % est raisonnable. La perte de 12,8 % pourrait correspondre à la chute de puissance due à la température, à la résistance interne ou au facteur de puissance. En résumé, les températures sont cohérentes ; les valeurs de rendement/​perte exigent un éclaircissement sur la définition de l’unité.
+
+2. **Principale perte**  
+   - La hausse de température de la cellule est la source de **perte thermique** la plus importante. Le coefficient de température d’un module monocristallin typique est d’environ –0,3 % / °C ; à 57,1 °C, la baisse d’efficacité par rapport à 25 °C est d’environ 6 %.  
+   - D’autres pertes possibles : résistance interne, pertes DC‑DC, pertes de suivi, ou pertes d’échelle du système (régulation, stockage). Parmi celles‑ci, la perte thermique est généralement dominante lorsqu’on observe un module chaud comme ici.
+
+3. **Piste d’amélioration**  
+   - **Refroidissement actif ou passif** : installer un dissipateur thermique, un support ventilé ou un revêtement réfléchissant sur le substrat pour réduire l’accumulation de chaleur.  
+   - **Choix de modules à coefficient de température faible** : passer à des cellules à faible sensibilité thermique (ex. cellules à couche mince ou à technologie à haute bande interdite) réduira la perte due à la chaleur.  
+   - **Optimisation du suivi et du câblage** : garantir un suivi solaire précis, réduire la résistance des câbles et optimiser le point de fonctionnement (MPPT) pour compenser la baisse d’efficacité.  
+
+En appliquant l’une ou l’autre de ces pistes, on peut diminuer la perte thermique, améliorer le rendement global et rendre le système plus résistant aux pics de chaleur propres à Ouagadougou.
