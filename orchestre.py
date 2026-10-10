@@ -4,13 +4,12 @@ import sys
 print("=" * 50)
 print("   NEXORA - Orchestrateur")
 print("=" * 50)
-
 etapes = [
     ("Physicien", "rapport.py"),
     ("Critique", "critique.py"),
-    ("Analyste", "analyste.py")
+    ("Analyste", "analyste.py"),
+    ("Ingenieur", "ingenieur.py")
 ]
-
 for nom, fichier in etapes:
     print()
     print("--- Etape :", nom, "---")
