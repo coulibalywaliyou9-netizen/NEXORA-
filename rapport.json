@@ -2,8 +2,8 @@
   "ville": "N'Djamena",
   "latitude": 12.11,
   "longitude": 15.05,
-  "temperature_air": 37.2,
-  "temperature_cellule": 59.0,
+  "temperature_air": 37.6,
+  "temperature_cellule": 58.9,
   "rendement_relatif_pct": 86.4,
   "rendement_absolu_pct": 17.3,
   "perte_pct": 13.6
