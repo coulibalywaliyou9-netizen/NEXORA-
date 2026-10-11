@@ -22,7 +22,9 @@ for i, a in enumerate(articles, 1):
     titre = titres[0] if titres else "N/A"
     resume = a.get("abstract", "Pas de resume")
     if resume and resume != "Pas de resume":
-        resume = resume.replace("<jats:p>", "").replace("</jats:p>", "")[:400]
+        for balise in ["<jats:p>", "</jats:p>", "<jats:title>", "</jats:title>", "<br>", "</br>", "<br/>", "<jats:italic>", "</jats:italic>", "<jats:bold>", "</jats:bold>"]:
+            resume = resume.replace(balise, " ")
+        resume = resume[:400]
     texte += f"--- Article {i} ---\nTitre : {titre}\nResume : {resume}\n\n"
 
 with open(".groq_key", "r") as f:

@@ -1,8 +1,8 @@
 {
   "ville": "Ouagadougou",
-  "temperature_air": 27.7,
-  "temperature_cellule": 52.5,
-  "rendement_relatif_pct": 89.0,
-  "rendement_absolu_pct": 17.8,
-  "perte_pct": 11.0
+  "temperature_air": 26.5,
+  "temperature_cellule": 50.4,
+  "rendement_relatif_pct": 89.8,
+  "rendement_absolu_pct": 18.0,
+  "perte_pct": 10.2
 }
