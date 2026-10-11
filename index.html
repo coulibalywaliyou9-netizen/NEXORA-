@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEXORA - L'IA qui invente</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -63,6 +64,11 @@
   <h2>Tour du Sahel - 5 villes comparees</h2>
   <div class="card" id="sahel-card">
     <p class="loading">Chargement des donnees...</p>
+  </div>
+
+  <h2>Evolution du rendement</h2>
+  <div class="card">
+    <canvas id="graphique-rendement"></canvas>
   </div>
 
   <h2>Historique des analyses</h2>
@@ -139,9 +145,48 @@ async function chargerHistorique() {
   }
 }
 
+async function chargerGraphique() {
+  try {
+    const r = await fetch(BASE + "historique.json?v=" + Date.now());
+    const h = await r.json();
+    const labels = h.map(e => e.date.slice(5, 16));
+    const valeurs = h.map(e => e.rapport.rendement_absolu_pct);
+    const ctx = document.getElementById("graphique-rendement").getContext("2d");
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: labels,
+        datasets: [{
+          label: "Rendement absolu (%)",
+          data: valeurs,
+          borderColor: "#ff6b35",
+          backgroundColor: "rgba(255,107,53,0.1)",
+          tension: 0.3,
+          fill: true,
+          pointBackgroundColor: "#ff6b35",
+          pointRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { labels: { color: "#e0e0e0" } }
+        },
+        scales: {
+          x: { ticks: { color: "#888" }, grid: { color: "#2a2a2a" } },
+          y: { ticks: { color: "#888" }, grid: { color: "#2a2a2a" } }
+        }
+      }
+    });
+  } catch(e) {
+    console.log("Erreur graphique");
+  }
+}
+
 chargerRapport();
 chargerSahel();
 chargerHistorique();
+chargerGraphique();
 </script>
 </body>
 </html>
