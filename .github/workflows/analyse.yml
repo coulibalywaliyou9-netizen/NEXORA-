@@ -1,0 +1,34 @@
+name: Analyse quotidienne NEXORA
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer requests
+        run: pip install requests
+
+      - name: Lancer le tour du Sahel
+        run: python tour_sahel.py
+
+      - name: Sauvegarder les resultats
+        run: |
+          git config user.name "NEXORA Bot"
+          git config user.email "bot@nexora.local"
+          git add sahel.json rapport.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Analyse automatique $(date +%Y-%m-%d)"
+          git push
