@@ -4,7 +4,6 @@ import sys
 print("=" * 50)
 print("   NEXORA - Orchestrateur")
 print("=" * 50)
-
 etapes = [
     ("Chercheur", "chercheur.py"),
     ("Physicien", "rapport.py"),
@@ -12,6 +11,7 @@ etapes = [
     ("Analyste", "analyste.py"),
     ("Explorateur", "explorateur.py"),
     ("Ingenieur", "ingenieur.py"),
+    ("Economiste", "economiste.py"),
     ("Visionnaire", "visionnaire.py"),
     ("Memoire", "memoire.py"),
     ("Historien", "historien.py")
