@@ -1,31 +1,31 @@
 [
   {
     "ville": "Ouagadougou",
-    "temperature_cellule": 56.9,
-    "rendement_absolu_pct": 17.5,
-    "perte_pct": 12.7
+    "temperature_cellule": 57.7,
+    "rendement_absolu_pct": 17.4,
+    "perte_pct": 13.1
   },
   {
     "ville": "Bobo-Dioulasso",
-    "temperature_cellule": 51.8,
-    "rendement_absolu_pct": 17.9,
-    "perte_pct": 10.7
+    "temperature_cellule": 52.7,
+    "rendement_absolu_pct": 17.8,
+    "perte_pct": 11.1
   },
   {
     "ville": "Niamey",
-    "temperature_cellule": 57.8,
-    "rendement_absolu_pct": 17.4,
-    "perte_pct": 13.1
+    "temperature_cellule": 58.7,
+    "rendement_absolu_pct": 17.3,
+    "perte_pct": 13.5
   },
   {
-    "ville": "Niamey",
-    "temperature_cellule": 57.8,
-    "rendement_absolu_pct": 17.4,
-    "perte_pct": 13.1
+    "ville": "Bamako",
+    "temperature_cellule": 52.2,
+    "rendement_absolu_pct": 17.8,
+    "perte_pct": 10.9
   },
   {
     "ville": "N'Djamena",
-    "temperature_cellule": 58.9,
+    "temperature_cellule": 59.0,
     "rendement_absolu_pct": 17.3,
     "perte_pct": 13.6
   }
