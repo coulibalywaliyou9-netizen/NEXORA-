@@ -12,6 +12,7 @@ etapes = [
     ("Explorateur", "explorateur.py"),
     ("Ingenieur", "ingenieur.py"),
     ("Economiste", "economiste.py"),
+    ("Juriste", "juriste.py"),
     ("Visionnaire", "visionnaire.py"),
     ("Memoire", "memoire.py"),
     ("Historien", "historien.py")
