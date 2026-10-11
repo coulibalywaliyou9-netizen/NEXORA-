@@ -12,7 +12,8 @@ etapes = [
     ("Analyste", "analyste.py"),
     ("Ingenieur", "ingenieur.py"),
     ("Visionnaire", "visionnaire.py"),
-    ("Memoire", "memoire.py")
+    ("Memoire", "memoire.py"),
+    ("Historien", "historien.py")
 ]
 for nom, fichier in etapes:
     print()
