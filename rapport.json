@@ -1,8 +1,10 @@
 {
-  "ville": "Ouagadougou",
-  "temperature_air": 27.0,
-  "temperature_cellule": 51.2,
-  "rendement_relatif_pct": 89.5,
+  "ville": "Bobo-Dioulasso",
+  "latitude": 11.18,
+  "longitude": -4.3,
+  "temperature_air": 28.9,
+  "temperature_cellule": 50.7,
+  "rendement_relatif_pct": 89.7,
   "rendement_absolu_pct": 17.9,
-  "perte_pct": 10.5
+  "perte_pct": 10.3
 }

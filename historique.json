@@ -20,5 +20,18 @@
       "rendement_absolu_pct": 17.9,
       "perte_pct": 10.5
     }
+  },
+  {
+    "date": "2026-10-11 10:49:40",
+    "rapport": {
+      "ville": "Bobo-Dioulasso",
+      "latitude": 11.18,
+      "longitude": -4.3,
+      "temperature_air": 28.9,
+      "temperature_cellule": 50.7,
+      "rendement_relatif_pct": 89.7,
+      "rendement_absolu_pct": 17.9,
+      "perte_pct": 10.3
+    }
   }
 ]
