@@ -10,9 +10,9 @@ etapes = [
     ("Physicien", "rapport.py"),
     ("Critique", "critique.py"),
     ("Analyste", "analyste.py"),
-    ("Ingenieur", "ingenieur.py")
+    ("Ingenieur", "ingenieur.py"),
+    ("Memoire", "memoire.py")
 ]
-
 for nom, fichier in etapes:
     print()
     print("--- Etape :", nom, "---")

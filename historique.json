@@ -1,0 +1,24 @@
+[
+  {
+    "date": "2026-10-11 07:52:25",
+    "rapport": {
+      "ville": "Ouagadougou",
+      "temperature_air": 26.5,
+      "temperature_cellule": 50.4,
+      "rendement_relatif_pct": 89.8,
+      "rendement_absolu_pct": 18.0,
+      "perte_pct": 10.2
+    }
+  },
+  {
+    "date": "2026-10-11 07:55:06",
+    "rapport": {
+      "ville": "Ouagadougou",
+      "temperature_air": 27.0,
+      "temperature_cellule": 51.2,
+      "rendement_relatif_pct": 89.5,
+      "rendement_absolu_pct": 17.9,
+      "perte_pct": 10.5
+    }
+  }
+]
