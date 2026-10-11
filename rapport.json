@@ -1,10 +1,10 @@
 {
-  "ville": "N'Djamena",
-  "latitude": 12.11,
-  "longitude": 15.05,
-  "temperature_air": 37.2,
-  "temperature_cellule": 59.0,
-  "rendement_relatif_pct": 86.4,
-  "rendement_absolu_pct": 17.3,
-  "perte_pct": 13.6
+  "ville": "Ouagadougou",
+  "latitude": 12.37,
+  "longitude": -1.52,
+  "temperature_air": 34.1,
+  "temperature_cellule": 57.4,
+  "rendement_relatif_pct": 87.0,
+  "rendement_absolu_pct": 17.4,
+  "perte_pct": 13.0
 }

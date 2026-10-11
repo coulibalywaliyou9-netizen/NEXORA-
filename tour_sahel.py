@@ -2,6 +2,9 @@ import subprocess
 import sys
 import json
 import os
+import shutil
+
+sys.dont_write_bytecode = True
 
 villes = [
     {"nom": "Ouagadougou", "lat": 12.37, "lon": -1.52},
@@ -11,15 +14,18 @@ villes = [
     {"nom": "N'Djamena", "lat": 12.11, "lon": 15.05}
 ]
 
-resultats = []
-
 print("=" * 50)
 print("   NEXORA - Tour du Sahel")
 print("=" * 50)
 
+resultats = []
+
 for v in villes:
     print()
     print("--- Analyse :", v["nom"], "---")
+    
+    if os.path.exists("__pycache__"):
+        shutil.rmtree("__pycache__")
     
     with open("config.py", "w") as f:
         f.write(f'VILLE = "{v["nom"]}"\n')
@@ -43,9 +49,14 @@ for v in villes:
 with open("sahel.json", "w", encoding="utf-8") as f:
     json.dump(resultats, f, indent=2, ensure_ascii=False)
 
+with open("config.py", "w") as f:
+    f.write('VILLE = "Ouagadougou"\n')
+    f.write('LATITUDE = 12.37\n')
+    f.write('LONGITUDE = -1.52\n')
+
+subprocess.run([sys.executable, "rapport.py"], capture_output=True)
+
 print()
 print("=" * 50)
-print("   Tour du Sahel termine - 5 villes analysees")
+print("   Tour du Sahel termine")
 print("=" * 50)
-print()
-print("Resultats sauvegardes dans sahel.json")

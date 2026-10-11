@@ -1,3 +1,3 @@
-VILLE = "N'Djamena"
-LATITUDE = 12.11
-LONGITUDE = 15.05
+VILLE = "Ouagadougou"
+LATITUDE = 12.37
+LONGITUDE = -1.52
