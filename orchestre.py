@@ -11,6 +11,7 @@ etapes = [
     ("Critique", "critique.py"),
     ("Analyste", "analyste.py"),
     ("Ingenieur", "ingenieur.py"),
+    ("Visionnaire", "visionnaire.py"),
     ("Memoire", "memoire.py")
 ]
 for nom, fichier in etapes:
