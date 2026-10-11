@@ -7,37 +7,12 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, system-ui, sans-serif;
-    background: #0a0a0a;
-    color: #e0e0e0;
-    line-height: 1.6;
-    padding: 20px;
-  }
+  body { font-family: -apple-system, system-ui, sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; padding: 20px; }
   .container { max-width: 800px; margin: 0 auto; }
-  h1 {
-    font-size: 2.5rem;
-    color: #fff;
-    margin-bottom: 10px;
-    background: linear-gradient(90deg, #ff6b35, #f7931e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+  h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; background: linear-gradient(90deg, #ff6b35, #f7931e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .tagline { color: #888; margin-bottom: 30px; font-size: 1.1rem; }
-  h2 {
-    color: #ff6b35;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-  }
-  .card {
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 15px;
-  }
+  h2 { color: #ff6b35; margin-top: 30px; margin-bottom: 15px; font-size: 1.4rem; }
+  .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
   .rapport { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .rapport .item { padding: 10px; background: #0f0f0f; border-radius: 6px; }
   .rapport .label { color: #666; font-size: 0.85rem; }
@@ -47,7 +22,8 @@
   th { color: #888; font-weight: 500; }
   .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a2a; color: #666; font-size: 0.9rem; text-align: center; }
   a { color: #ff6b35; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  .agents { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .agent { padding: 10px; background: #0f0f0f; border-radius: 6px; font-size: 0.85rem; }
   .loading { color: #666; font-style: italic; }
 </style>
 </head>
@@ -55,96 +31,76 @@
 <div class="container">
   <h1>NEXORA</h1>
   <p class="tagline">L'IA qui invente pour le monde depuis l'Afrique</p>
-
   <h2>Analyse en direct</h2>
-  <div class="card" id="rapport-card">
-    <p class="loading">Chargement des donnees...</p>
-  </div>
-
-  <h2>Tour du Sahel - 5 villes comparees</h2>
-  <div class="card" id="sahel-card">
-    <p class="loading">Chargement des donnees...</p>
-  </div>
-
+  <div class="card" id="rapport-card"><p class="loading">Chargement...</p></div>
+  <h2>Tour du Sahel</h2>
+  <div class="card" id="sahel-card"><p class="loading">Chargement...</p></div>
   <h2>Evolution du rendement</h2>
+  <div class="card"><canvas id="graphique-rendement"></canvas></div>
+  <h2>Historique</h2>
+  <div class="card" id="historique-card"><p class="loading">Chargement...</p></div>
+  <h2>Architecture : 15 agents</h2>
   <div class="card">
-    <canvas id="graphique-rendement"></canvas>
+    <div class="agents">
+      <div class="agent">1. Chercheur</div>
+      <div class="agent">2. Physicien</div>
+      <div class="agent">3. Critique</div>
+      <div class="agent">4. Analyste</div>
+      <div class="agent">5. Explorateur</div>
+      <div class="agent">6. Ingenieur</div>
+      <div class="agent">7. Economiste</div>
+      <div class="agent">8. Juriste</div>
+      <div class="agent">9. Educateur</div>
+      <div class="agent">10. Visionnaire</div>
+      <div class="agent">11. Memoire</div>
+      <div class="agent">12. Historien</div>
+      <div class="agent">13. Arbitre</div>
+      <div class="agent">14. Directeur</div>
+      <div class="agent">15. Stratege</div>
+    </div>
   </div>
-
-  <h2>Historique des analyses</h2>
-  <div class="card" id="historique-card">
-    <p class="loading">Chargement de l'historique...</p>
-  </div>
-
-  <h2>Architecture : 7 agents</h2>
+  <h2>Debat entre agents</h2>
   <div class="card">
-    <p>🔬 <strong>Chercheur</strong> — Lit la science mondiale (Crossref)</p>
-    <p>⚛️ <strong>Physicien</strong> — Calcule la physique reelle</p>
-    <p>⚖️ <strong>Critique</strong> — Verifie la plausibilite</p>
-    <p>📚 <strong>Analyste</strong> — Fait raisonner une IA</p>
-    <p>🔧 <strong>Ingenieur</strong> — Concoit avec materiaux locaux</p>
-    <p>🎨 <strong>Visionnaire</strong> — Imagine le futur</p>
-    <p>🧠 <strong>Memoire</strong> — Se souvient dans le temps</p>
+    <p>L'Ingenieur propose un design.</p>
+    <p>Le Critique trouve 3 failles concretes.</p>
+    <p>L'Ingenieur revise.</p>
+    <p>L'Arbitre decide : OUI / NON, note sur 10.</p>
   </div>
-
   <div class="footer">
-    <p>Projet open source — <a href="https://github.com/coulibalywaliyou9-netizen/NEXORA-">Voir sur GitHub</a></p>
+    <p><a href="https://github.com/coulibalywaliyou9-netizen/NEXORA-">Voir sur GitHub</a></p>
     <p>Le feu ne doit jamais rester aux dieux.</p>
   </div>
 </div>
-
 <script>
 const BASE = "https://raw.githubusercontent.com/coulibalywaliyou9-netizen/NEXORA-/main/";
-
 async function chargerRapport() {
   try {
     const r = await fetch(BASE + "rapport.json?v=" + Date.now());
     const d = await r.json();
-    document.getElementById("rapport-card").innerHTML = `
-      <p style="color:#888;font-size:0.9rem;margin-bottom:15px;">Ville : <strong style="color:#fff;">${d.ville}</strong></p>
-      <div class="rapport">
-        <div class="item"><div class="label">Temperature air</div><div class="value">${d.temperature_air} C</div></div>
-        <div class="item"><div class="label">Temperature cellule</div><div class="value">${d.temperature_cellule} C</div></div>
-        <div class="item"><div class="label">Rendement absolu</div><div class="value">${d.rendement_absolu_pct} %</div></div>
-        <div class="item"><div class="label">Perte thermique</div><div class="value">${d.perte_pct} %</div></div>
-      </div>
-    `;
-  } catch(e) {
-    document.getElementById("rapport-card").innerHTML = "<p>Erreur de chargement.</p>";
-  }
+    document.getElementById("rapport-card").innerHTML = '<p style="color:#888;font-size:0.9rem;margin-bottom:15px;">Ville : <strong style="color:#fff;">' + d.ville + '</strong></p><div class="rapport"><div class="item"><div class="label">Temperature air</div><div class="value">' + d.temperature_air + ' C</div></div><div class="item"><div class="label">Temperature cellule</div><div class="value">' + d.temperature_cellule + ' C</div></div><div class="item"><div class="label">Rendement absolu</div><div class="value">' + d.rendement_absolu_pct + ' %</div></div><div class="item"><div class="label">Perte thermique</div><div class="value">' + d.perte_pct + ' %</div></div></div>';
+  } catch(e) { document.getElementById("rapport-card").innerHTML = "<p>Erreur</p>"; }
 }
-
 async function chargerSahel() {
   try {
     const r = await fetch(BASE + "sahel.json?v=" + Date.now());
     const s = await r.json();
     let html = '<table><tr><th>Ville</th><th>Temp cellule</th><th>Rendement</th></tr>';
-    for (const v of s) {
-      html += `<tr><td>${v.ville}</td><td>${v.temperature_cellule} C</td><td>${v.rendement_absolu_pct} %</td></tr>`;
-    }
+    for (const v of s) html += '<tr><td>' + v.ville + '</td><td>' + v.temperature_cellule + ' C</td><td>' + v.rendement_absolu_pct + ' %</td></tr>';
     html += '</table>';
     document.getElementById("sahel-card").innerHTML = html;
-  } catch(e) {
-    document.getElementById("sahel-card").innerHTML = "<p>Donnees du Sahel non disponibles.</p>";
-  }
+  } catch(e) { document.getElementById("sahel-card").innerHTML = "<p>Non disponible</p>"; }
 }
-
 async function chargerHistorique() {
   try {
     const r = await fetch(BASE + "historique.json?v=" + Date.now());
     const h = await r.json();
-    const derniers = h.slice(-10).reverse();
-    let html = '<table><tr><th>Date</th><th>Temp cellule</th><th>Rendement</th></tr>';
-    for (const e of derniers) {
-      html += `<tr><td>${e.date}</td><td>${e.rapport.temperature_cellule} C</td><td>${e.rapport.rendement_absolu_pct} %</td></tr>`;
-    }
+    const d = h.slice(-10).reverse();
+    let html = '<table><tr><th>Date</th><th>Temp</th><th>Rendement</th></tr>';
+    for (const e of d) html += '<tr><td>' + e.date + '</td><td>' + e.rapport.temperature_cellule + ' C</td><td>' + e.rapport.rendement_absolu_pct + ' %</td></tr>';
     html += '</table>';
     document.getElementById("historique-card").innerHTML = html;
-  } catch(e) {
-    document.getElementById("historique-card").innerHTML = "<p>Historique non disponible.</p>";
-  }
+  } catch(e) { document.getElementById("historique-card").innerHTML = "<p>Non disponible</p>"; }
 }
-
 async function chargerGraphique() {
   try {
     const r = await fetch(BASE + "historique.json?v=" + Date.now());
@@ -152,37 +108,9 @@ async function chargerGraphique() {
     const labels = h.map(e => e.date.slice(5, 16));
     const valeurs = h.map(e => e.rapport.rendement_absolu_pct);
     const ctx = document.getElementById("graphique-rendement").getContext("2d");
-    new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: labels,
-        datasets: [{
-          label: "Rendement absolu (%)",
-          data: valeurs,
-          borderColor: "#ff6b35",
-          backgroundColor: "rgba(255,107,53,0.1)",
-          tension: 0.3,
-          fill: true,
-          pointBackgroundColor: "#ff6b35",
-          pointRadius: 4
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { labels: { color: "#e0e0e0" } }
-        },
-        scales: {
-          x: { ticks: { color: "#888" }, grid: { color: "#2a2a2a" } },
-          y: { ticks: { color: "#888" }, grid: { color: "#2a2a2a" } }
-        }
-      }
-    });
-  } catch(e) {
-    console.log("Erreur graphique");
-  }
+    new Chart(ctx, { type: "line", data: { labels: labels, datasets: [{ label: "Rendement (%)", data: valeurs, borderColor: "#ff6b35", backgroundColor: "rgba(255,107,53,0.1)", tension: 0.3, fill: true }] }, options: { responsive: true, plugins: { legend: { labels: { color: "#e0e0e0" } } }, scales: { x: { ticks: { color: "#888" }, grid: { color: "#2a2a2a" } }, y: { ticks: { color: "#888" }, grid: { color: "#2a2a2a" } } } } });
+  } catch(e) {}
 }
-
 chargerRapport();
 chargerSahel();
 chargerHistorique();
