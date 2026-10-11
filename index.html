@@ -60,6 +60,11 @@
     <p class="loading">Chargement des donnees...</p>
   </div>
 
+  <h2>Tour du Sahel - 5 villes comparees</h2>
+  <div class="card" id="sahel-card">
+    <p class="loading">Chargement des donnees...</p>
+  </div>
+
   <h2>Historique des analyses</h2>
   <div class="card" id="historique-card">
     <p class="loading">Chargement de l'historique...</p>
@@ -103,6 +108,21 @@ async function chargerRapport() {
   }
 }
 
+async function chargerSahel() {
+  try {
+    const r = await fetch(BASE + "sahel.json?v=" + Date.now());
+    const s = await r.json();
+    let html = '<table><tr><th>Ville</th><th>Temp cellule</th><th>Rendement</th></tr>';
+    for (const v of s) {
+      html += `<tr><td>${v.ville}</td><td>${v.temperature_cellule} C</td><td>${v.rendement_absolu_pct} %</td></tr>`;
+    }
+    html += '</table>';
+    document.getElementById("sahel-card").innerHTML = html;
+  } catch(e) {
+    document.getElementById("sahel-card").innerHTML = "<p>Donnees du Sahel non disponibles.</p>";
+  }
+}
+
 async function chargerHistorique() {
   try {
     const r = await fetch(BASE + "historique.json?v=" + Date.now());
@@ -120,6 +140,7 @@ async function chargerHistorique() {
 }
 
 chargerRapport();
+chargerSahel();
 chargerHistorique();
 </script>
 </body>
