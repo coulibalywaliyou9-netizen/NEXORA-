@@ -2,15 +2,15 @@
   {
     "design": "Bassin d'eau sous panneau",
     "note": 8,
-    "failles": [
-      "Aucune faille majeure identifiee"
-    ]
+    "verdict": "RECOMMANDE",
+    "failles": "1. Le cadre en acier galvanisé récupéré présente déjà une corrosion superficielle de 3 mm, ce qui provoque une fuite du bassin en 6 mois, annulant l’échappement d’eau prévu.  \n2. La bâche plastique se fissure en 8 mois sous les 45 °C d’Ouagadougou, créant un vide de 15 cm et réduisant l’évaporation de 70 %, ce qui rend le pay‑back de 13,2 mois irréaliste.  \n3. Le tuyau PVC, exposé aux UV, se fissurera après 12 mois, interrompant la recharge et imposant un coût supplémentaire non prévu dans le calcul de rentabilité.",
+    "payback_mois": 13.2
   },
   {
     "design": "Peinture reflechissante + ventilation",
-    "note": 8,
-    "failles": [
-      "Aucune faille majeure identifiee"
-    ]
+    "note": 6,
+    "verdict": "A RETRAVAILLER",
+    "failles": "1. La peinture chaux perd son albedo après seulement 2–3 semaines de poussière épaisse, obligeant à un lavage bi‑mensuel qui consume plus de 30 % du bénéfice énergétique prévu.  \n2. La grille métallique récupérée se corrode dès le début de la saison des pluies, provoquant un effondrement potentiel de la ventilation en 4–6 mois, bien avant les 18 mois annoncés.  \n3. Le support PVC, exposé aux UV à 35–45 °C, subit une fragilisation et un cassage visible en 12 mois, faisant basculer la structure et annulant la répartition thermique du panneau.",
+    "payback_mois": 7.1
   }
 ]

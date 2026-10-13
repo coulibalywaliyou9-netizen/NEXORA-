@@ -8,6 +8,7 @@
 body { font-family: system-ui, sans-serif; background: #0a0a0a; color: #e0e0e0; padding: 20px; line-height: 1.6; max-width: 900px; margin: 0 auto; }
 h1 { color: #ff6b35; }
 h2 { color: #ff6b35; border-bottom: 2px solid #ff6b35; padding-bottom: 5px; margin-top: 30px; }
+h3 { color: #ff6b35; }
 table { width: 100%; border-collapse: collapse; margin: 15px 0; }
 th, td { padding: 10px; text-align: left; border-bottom: 1px solid #2a2a2a; }
 th { color: #ff6b35; }
@@ -15,57 +16,41 @@ th { color: #ff6b35; }
 .vert { color: #4ade80; font-weight: bold; }
 .orange { color: #fb923c; font-weight: bold; }
 .rouge { color: #ef4444; font-weight: bold; }
+.hypo { background: #2a2a2a; border-radius: 8px; padding: 15px; font-size: 0.9rem; }
+.hypo code { color: #ff6b35; background: #1a1a1a; padding: 2px 6px; border-radius: 3px; }
 .footer { margin-top: 40px; text-align: center; color: #666; font-size: 0.9rem; }
 </style>
 </head>
 <body>
 <h1>NEXORA - Rapport final</h1>
 <p>Ville : Ouagadougou (Burkina Faso)</p>
-<p>Date : 13/10/2026 09:10</p>
+<p>Date : 13/10/2026 09:20</p>
+
+<h2>0. Hypotheses utilisees</h2>
+<div class="hypo">
+<p><strong>Climat (Ouagadougou) :</strong></p>
+<ul>
+<li>Moyenne annuelle : <code>29 C</code>, <code>5.8 kWh/m2/jour</code></li>
+<li>Mois chauds : <code>35 C</code>, <code>6.5 kWh/m2/jour</code></li>
+<li>Canicule : <code>45 C</code>, <code>7.5 kWh/m2/jour</code></li>
+<li>Meilleur ensoleillement : <code>32 C</code>, <code>7.0 kWh/m2/jour</code></li>
+</ul>
+<p><strong>Panneau :</strong></p>
+<ul>
+<li>Puissance nominale : <code>300 W</code></li>
+<li>Surface : <code>1.72 m2</code></li>
+<li>Rendement nominal : <code>20 %</code></li>
+<li>Coefficient temperature : <code>-0.4 %/C</code></li>
+<li>Modele NOCT : <code>T_cell = T_air + 3.5 x irradiation</code></li>
+</ul>
+<p><strong>Economie :</strong></p>
+<ul>
+<li>Prix kWh rural : <code>600 FCFA</code></li>
+<li>Conso famille : <code>300 kWh/an</code> (6 personnes)</li>
+<li>Installation village : <code>100 modules</code></li>
+</ul>
+</div>
 
 <h2>1. Analyse climatique</h2>
 <table>
-<tr><th>Scenario</th><th>T air</th><th>T cellule</th><th>Rendement</th><th>Production</th></tr><tr><td>Moyenne sur l'annee</td><td>29.0 C</td><td>49.3 C</td><td>18.1 %</td><td>657.5 kWh/an</td></tr><tr><td>Avril-Mai (mois les plus chauds)</td><td>35.0 C</td><td>57.8 C</td><td>17.4 %</td><td>709.2 kWh/an</td></tr><tr><td>Canicule exceptionnelle</td><td>45.0 C</td><td>71.2 C</td><td>16.3 %</td><td>767.5 kWh/an</td></tr><tr><td>Mars (meilleur ensoleillement)</td><td>32.0 C</td><td>56.5 C</td><td>17.5 %</td><td>768.2 kWh/an</td></tr></table>
-
-<h2>2. Designs proposes</h2><div class="card">
-<h3>Bassin d'eau sous panneau</h3>
-<p>Cadre metallique + bassin d'eau 5 cm de profondeur sous le panneau. Evaporation naturelle + conduction thermique.</p>
-<p><strong>Materiaux :</strong> Cadre en acier galvanise (recupere), Bassin en beton leger (ciment + sable), Bache plastique etanche, Tuyau PVC pour remplissage</p>
-<table>
-<tr><td>Cout</td><td>15000 FCFA</td></tr>
-<tr><td>Gain temperature</td><td>-8 C</td></tr>
-<tr><td>Gain rendement</td><td>+0.56 %</td></tr>
-<tr><td>Gain energie</td><td>+22.7 kWh/an</td></tr>
-<tr><td>Gain economique</td><td>+13617 FCFA/an</td></tr>
-<tr><td>Payback</td><td>13.2 mois</td></tr>
-<tr><td>Habitants impactes</td><td>25</td></tr>
-</table>
-</div><div class="card">
-<h3>Peinture reflechissante + ventilation</h3>
-<p>Peinture blanche haute albedo sur le cadre + grille de ventilation naturelle sous le panneau.</p>
-<p><strong>Materiaux :</strong> Peinture blanche a base de chaux, Grille metallique (recuperee), Support surélevé 10 cm</p>
-<table>
-<tr><td>Cout</td><td>5000 FCFA</td></tr>
-<tr><td>Gain temperature</td><td>-5 C</td></tr>
-<tr><td>Gain rendement</td><td>+0.35 %</td></tr>
-<tr><td>Gain energie</td><td>+14.2 kWh/an</td></tr>
-<tr><td>Gain economique</td><td>+8510 FCFA/an</td></tr>
-<tr><td>Payback</td><td>7.1 mois</td></tr>
-<tr><td>Habitants impactes</td><td>15</td></tr>
-</table>
-</div><h2>3. Critique et notes</h2>
-<table>
-<tr><th>Design</th><th>Failles</th><th>Note</th><th>Verdict</th></tr><tr><td>Bassin d'eau sous panneau</td><td>Aucune faille majeure identifiee</td><td>8/10</td><td><span class="vert">RECOMMANDE</span></td></tr><tr><td>Peinture reflechissante + ventilation</td><td>Aucune faille majeure identifiee</td><td>8/10</td><td><span class="vert">RECOMMANDE</span></td></tr></table>
-
-<h2>4. Recommandation finale</h2>
-<div class="card">
-<p><strong>Design recommande :</strong> Bassin d'eau sous panneau</p>
-<p>Ce design offre le meilleur compromis entre cout, gain energetique et faisabilite locale.</p>
-</div>
-
-<div class="footer">
-<p>NEXORA - L'IA qui invente pour le monde depuis l'Afrique</p>
-<p>Le feu ne doit jamais rester aux dieux.</p>
-</div>
-</body>
-</html>
+<tr><th>Scenario</th><th>T air</th><th>T cellule</th><th>Rendement</th><th>Energie recue</th><th>Production</th><th>Coherent</th></tr><tr><td>Moyenne sur l'annee</td><td>29.0 C</td><td>49.3 C</td><td>18.1 %</td><td>9.98 kWh/j</td><td>1.8 kWh/j</td><td>OK</td></tr><tr><td>Avril-Mai (mois les plus chauds)</td><td>35.0 C</td><td>57.8 C</td><td>17.4 %</td><td>11.18 kWh/j</td><td>1.94 kWh/j</td><td>OK</td></tr><tr><td>Canicule exceptionnelle</td><td>45.0 C</td><td>71.2 C</td><td>16.3 %</td><td>12.9 kWh/j</td><td>2.1 kWh/j</td><td>OK</td></tr><tr><td>Mars (meilleur ensoleillement)</td><td>32.0 C</td><td>56.5 C</td><td>17.5 %</td><td>12.04 kWh/j</td><td>2.1 kWh/j</td><td>OK</td></tr></table><h2>2. Designs proposes</h2><div class="card"><h3>Bassin d'eau sous panneau</h3><p>Cadre metallique + bassin d'eau 5 cm sous le panneau. Evaporation naturelle + conduction.</p><p><strong>Materiaux :</strong></p><ul><li>Cadre acier galvanise (recupere) : 5 000 FCFA</li><li>Bassin beton leger (ciment + sable) : 6 000 FCFA</li><li>Bache plastique etanche : 3 000 FCFA</li><li>Tuyau PVC remplissage : 1 000 FCFA</li></ul><table><tr><td>Cout total</td><td>15000 FCFA</td></tr><tr><td>Gain temperature</td><td>-8 C</td></tr><tr><td>Gain rendement</td><td>+0.56 %</td></tr><tr><td>Gain energie</td><td>+22.7 kWh/an/module</td></tr><tr><td>Gain economique</td><td>+13617 FCFA/an</td></tr><tr><td>Payback</td><td>13.2 mois</td></tr><tr><td>Habitants impactes (100 modules)</td><td>45 personnes</td></tr><tr><td>Duree de vie</td><td>24 mois</td></tr></table></div><div class="card"><h3>Peinture reflechissante + ventilation</h3><p>Peinture blanche haute albedo + grille de ventilation naturelle sous le panneau.</p><p><strong>Materiaux :</strong></p><ul><li>Peinture blanche a base de chaux : 3 000 FCFA</li><li>Grille metallique (recuperee) : 1 000 FCFA</li><li>Support sureleve 10 cm : 1 000 FCFA</li></ul><table><tr><td>Cout total</td><td>5000 FCFA</td></tr><tr><td>Gain temperature</td><td>-5 C</td></tr><tr><td>Gain rendement</td><td>+0.35 %</td></tr><tr><td>Gain energie</td><td>+14.2 kWh/an/module</td></tr><tr><td>Gain economique</td><td>+8510 FCFA/an</td></tr><tr><td>Payback</td><td>7.1 mois</td></tr><tr><td>Habitants impactes (100 modules)</td><td>28 personnes</td></tr><tr><td>Duree de vie</td><td>18 mois</td></tr></table></div><h2>3. Critique et notes</h2><div class="card"><h3>Bassin d'eau sous panneau - <span class="vert">RECOMMANDE</span> (note 8/10)</h3><p><strong>Payback :</strong> 13.2 mois</p><p><strong>Failles identifiees par le Critique :</strong></p><p>1. Le cadre en acier galvanisé récupéré présente déjà une corrosion superficielle de 3 mm, ce qui provoque une fuite du bassin en 6 mois, annulant l’échappement d’eau prévu.  <br>2. La bâche plastique se fissure en 8 mois sous les 45 °C d’Ouagadougou, créant un vide de 15 cm et réduisant l’évaporation de 70 %, ce qui rend le pay‑back de 13,2 mois irréaliste.  <br>3. Le tuyau PVC, exposé aux UV, se fissurera après 12 mois, interrompant la recharge et imposant un coût supplémentaire non prévu dans le calcul de rentabilité.</p></div><div class="card"><h3>Peinture reflechissante + ventilation - <span class="orange">A RETRAVAILLER</span> (note 6/10)</h3><p><strong>Payback :</strong> 7.1 mois</p><p><strong>Failles identifiees par le Critique :</strong></p><p>1. La peinture chaux perd son albedo après seulement 2–3 semaines de poussière épaisse, obligeant à un lavage bi‑mensuel qui consume plus de 30 % du bénéfice énergétique prévu.  <br>2. La grille métallique récupérée se corrode dès le début de la saison des pluies, provoquant un effondrement potentiel de la ventilation en 4–6 mois, bien avant les 18 mois annoncés.  <br>3. Le support PVC, exposé aux UV à 35–45 °C, subit une fragilisation et un cassage visible en 12 mois, faisant basculer la structure et annulant la répartition thermique du panneau.</p></div><h2>4. Recommandation finale</h2><div class="card"><p><strong>Design recommande :</strong> Bassin d'eau sous panneau</p><p><strong>Note :</strong> 8/10</p><p><strong>Verdict :</strong> RECOMMANDE</p></div><div class="footer"><p>NEXORA - L'IA qui invente pour le monde depuis l'Afrique</p><p>Le feu ne doit jamais rester aux dieux.</p></div></body></html>

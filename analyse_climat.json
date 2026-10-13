@@ -7,8 +7,11 @@
     "T_cellule": 49.3,
     "rendement_relatif_pct": 90.3,
     "rendement_absolu_pct": 18.1,
+    "energie_recue_kwh_jour": 9.98,
+    "production_kwh_jour": 1.8,
+    "production_kwh_an": 657.5,
     "perte_pct": 9.7,
-    "production_kwh_an": 657.5
+    "coherent": true
   },
   "mois_plus_chaud": {
     "description": "Avril-Mai (mois les plus chauds)",
@@ -18,8 +21,11 @@
     "T_cellule": 57.8,
     "rendement_relatif_pct": 86.9,
     "rendement_absolu_pct": 17.4,
+    "energie_recue_kwh_jour": 11.18,
+    "production_kwh_jour": 1.94,
+    "production_kwh_an": 709.2,
     "perte_pct": 13.1,
-    "production_kwh_an": 709.2
+    "coherent": true
   },
   "extreme": {
     "description": "Canicule exceptionnelle",
@@ -29,8 +35,11 @@
     "T_cellule": 71.2,
     "rendement_relatif_pct": 81.5,
     "rendement_absolu_pct": 16.3,
+    "energie_recue_kwh_jour": 12.9,
+    "production_kwh_jour": 2.1,
+    "production_kwh_an": 767.5,
     "perte_pct": 18.5,
-    "production_kwh_an": 767.5
+    "coherent": true
   },
   "mois_plus_ensoleille": {
     "description": "Mars (meilleur ensoleillement)",
@@ -40,7 +49,10 @@
     "T_cellule": 56.5,
     "rendement_relatif_pct": 87.4,
     "rendement_absolu_pct": 17.5,
+    "energie_recue_kwh_jour": 12.04,
+    "production_kwh_jour": 2.1,
+    "production_kwh_an": 768.2,
     "perte_pct": 12.6,
-    "production_kwh_an": 768.2
+    "coherent": true
   }
 }
