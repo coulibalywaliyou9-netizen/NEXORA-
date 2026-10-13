@@ -1,0 +1,46 @@
+{
+  "moyenne_annuelle": {
+    "description": "Moyenne sur l'annee",
+    "T_air": 29.0,
+    "irradiation": 5.8,
+    "vent": 2.5,
+    "T_cellule": 49.3,
+    "rendement_relatif_pct": 90.3,
+    "rendement_absolu_pct": 18.1,
+    "perte_pct": 9.7,
+    "production_kwh_an": 657.5
+  },
+  "mois_plus_chaud": {
+    "description": "Avril-Mai (mois les plus chauds)",
+    "T_air": 35.0,
+    "irradiation": 6.5,
+    "vent": 2.0,
+    "T_cellule": 57.8,
+    "rendement_relatif_pct": 86.9,
+    "rendement_absolu_pct": 17.4,
+    "perte_pct": 13.1,
+    "production_kwh_an": 709.2
+  },
+  "extreme": {
+    "description": "Canicule exceptionnelle",
+    "T_air": 45.0,
+    "irradiation": 7.5,
+    "vent": 1.5,
+    "T_cellule": 71.2,
+    "rendement_relatif_pct": 81.5,
+    "rendement_absolu_pct": 16.3,
+    "perte_pct": 18.5,
+    "production_kwh_an": 767.5
+  },
+  "mois_plus_ensoleille": {
+    "description": "Mars (meilleur ensoleillement)",
+    "T_air": 32.0,
+    "irradiation": 7.0,
+    "vent": 2.5,
+    "T_cellule": 56.5,
+    "rendement_relatif_pct": 87.4,
+    "rendement_absolu_pct": 17.5,
+    "perte_pct": 12.6,
+    "production_kwh_an": 768.2
+  }
+}

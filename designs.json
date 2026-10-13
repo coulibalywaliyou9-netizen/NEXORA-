@@ -1,0 +1,33 @@
+[
+  {
+    "nom": "Bassin d'eau sous panneau",
+    "description": "Cadre metallique + bassin d'eau 5 cm de profondeur sous le panneau. Evaporation naturelle + conduction thermique.",
+    "materiaux": [
+      "Cadre en acier galvanise (recupere)",
+      "Bassin en beton leger (ciment + sable)",
+      "Bache plastique etanche",
+      "Tuyau PVC pour remplissage"
+    ],
+    "cout_fcfa": 15000,
+    "gain_temp": 8,
+    "gain_rendement_pct": 0.56,
+    "gain_kwh_an": 22.7,
+    "gain_fcfa_an": 13617.0,
+    "habitants_impactes": 25
+  },
+  {
+    "nom": "Peinture reflechissante + ventilation",
+    "description": "Peinture blanche haute albedo sur le cadre + grille de ventilation naturelle sous le panneau.",
+    "materiaux": [
+      "Peinture blanche a base de chaux",
+      "Grille metallique (recuperee)",
+      "Support surélevé 10 cm"
+    ],
+    "cout_fcfa": 5000,
+    "gain_temp": 5,
+    "gain_rendement_pct": 0.35,
+    "gain_kwh_an": 14.2,
+    "gain_fcfa_an": 8510.0,
+    "habitants_impactes": 15
+  }
+]
