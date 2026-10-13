@@ -3,17 +3,19 @@
     "nom": "Bassin d'eau sous panneau",
     "description": "Cadre metallique + bassin d'eau 5 cm sous le panneau. Evaporation naturelle + conduction.",
     "materiaux": [
-      "Cadre acier galvanise (recupere) : 5 000 FCFA",
-      "Bassin beton leger (ciment + sable) : 6 000 FCFA",
+      "Cadre acier galvanise : 5 000 FCFA",
+      "Bassin beton leger : 6 000 FCFA",
       "Bache plastique etanche : 3 000 FCFA",
       "Tuyau PVC remplissage : 1 000 FCFA"
     ],
     "cout_fcfa": 15000,
     "gain_temp": 8,
     "gain_rendement_pct": 0.56,
-    "gain_kwh_an": 22.7,
-    "gain_fcfa_an": 13617.0,
-    "habitants_impactes": 45,
+    "gain_kwh_an_module": 22.07,
+    "gain_fcfa_an_module": 13240.0,
+    "gain_kwh_an_village": 2206.7,
+    "gain_fcfa_an_village": 1324032.0,
+    "habitants_impactes_village": 44,
     "duree_vie_mois": 24
   },
   {
@@ -21,15 +23,17 @@
     "description": "Peinture blanche haute albedo + grille de ventilation naturelle sous le panneau.",
     "materiaux": [
       "Peinture blanche a base de chaux : 3 000 FCFA",
-      "Grille metallique (recuperee) : 1 000 FCFA",
+      "Grille metallique : 1 000 FCFA",
       "Support sureleve 10 cm : 1 000 FCFA"
     ],
     "cout_fcfa": 5000,
     "gain_temp": 5,
     "gain_rendement_pct": 0.35,
-    "gain_kwh_an": 14.2,
-    "gain_fcfa_an": 8510.0,
-    "habitants_impactes": 28,
+    "gain_kwh_an_module": 13.79,
+    "gain_fcfa_an_module": 8275.0,
+    "gain_kwh_an_village": 1379.2,
+    "gain_fcfa_an_village": 827520.0,
+    "habitants_impactes_village": 27,
     "duree_vie_mois": 18
   }
 ]

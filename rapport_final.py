@@ -28,6 +28,7 @@ th { color: #ff6b35; }
 .rouge { color: #ef4444; font-weight: bold; }
 .hypo { background: #2a2a2a; border-radius: 8px; padding: 15px; font-size: 0.9rem; }
 .hypo code { color: #ff6b35; background: #1a1a1a; padding: 2px 6px; border-radius: 3px; }
+.note { background: #1a1a1a; border-left: 3px solid #ff6b35; padding: 10px 15px; margin: 15px 0; font-size: 0.9rem; }
 .footer { margin-top: 40px; text-align: center; color: #666; font-size: 0.9rem; }
 </style>
 </head>
@@ -41,11 +42,11 @@ th { color: #ff6b35; }
 <p><strong>Climat (Ouagadougou) :</strong></p>
 <ul>
 <li>Moyenne annuelle : <code>29 C</code>, <code>5.8 kWh/m2/jour</code></li>
-<li>Mois chauds : <code>35 C</code>, <code>6.5 kWh/m2/jour</code></li>
-<li>Canicule : <code>45 C</code>, <code>7.5 kWh/m2/jour</code></li>
-<li>Meilleur ensoleillement : <code>32 C</code>, <code>7.0 kWh/m2/jour</code></li>
+<li>Avril-Mai : <code>35 C</code>, <code>6.3 kWh/m2/jour</code></li>
+<li>Canicule : <code>45 C</code>, <code>6.5 kWh/m2/jour</code></li>
+<li>Mars : <code>32 C</code>, <code>7.0 kWh/m2/jour</code></li>
 </ul>
-<p><strong>Panneau :</strong></p>
+<p><strong>Panneau (par module) :</strong></p>
 <ul>
 <li>Puissance nominale : <code>300 W</code></li>
 <li>Surface : <code>1.72 m2</code></li>
@@ -53,40 +54,57 @@ th { color: #ff6b35; }
 <li>Coefficient temperature : <code>-0.4 %/C</code></li>
 <li>Modele NOCT : <code>T_cell = T_air + 3.5 x irradiation</code></li>
 </ul>
-<p><strong>Economie :</strong></p>
+<p><strong>Economie et usage :</strong></p>
 <ul>
 <li>Prix kWh rural : <code>600 FCFA</code></li>
-<li>Conso famille : <code>300 kWh/an</code> (6 personnes)</li>
-<li>Installation village : <code>100 modules</code></li>
+<li>Conso famille : <code>300 kWh/an</code> (6 personnes, usage minimal)</li>
+<li>Conso par personne : <code>50 kWh/an</code> (137 Wh/jour)</li>
+<li>Taille installation village : <code>100 modules</code></li>
 </ul>
 </div>
 
 <h2>1. Analyse climatique</h2>
 <table>
-<tr><th>Scenario</th><th>T air</th><th>T cellule</th><th>Rendement</th><th>Energie recue</th><th>Production</th><th>Coherent</th></tr>"""
+<tr><th>Scenario</th><th>T air</th><th>T cellule</th><th>Rendement</th><th>Energie recue (1 module)</th><th>Production (1 module)</th><th>Coherent</th></tr>"""
 
 for s, r in clim.items():
     icon = "OK" if r.get("coherent", True) else "KO"
     html += "<tr><td>" + r["description"] + "</td><td>" + str(r["T_air"]) + " C</td><td>" + str(r["T_cellule"]) + " C</td><td>" + str(r["rendement_absolu_pct"]) + " %</td><td>" + str(r.get("energie_recue_kwh_jour", "?")) + " kWh/j</td><td>" + str(r.get("production_kwh_jour", "?")) + " kWh/j</td><td>" + icon + "</td></tr>"
 
-html += "</table><h2>2. Designs proposes</h2>"
+html += """</table>
+<div class="note">
+<strong>Note :</strong> Les valeurs de production sont pour <strong>1 module de 300 W</strong>. Pour une installation villageoise, multiplier par le nombre de modules.
+</div>
+
+<h2>2. Designs proposes</h2>"""
 
 for d in designs:
-    payback = round(d["cout_fcfa"] / d["gain_fcfa_an"] * 12, 1)
+    payback = round(d["cout_fcfa"] / d["gain_fcfa_an_module"] * 12, 1)
     html += '<div class="card"><h3>' + d["nom"] + '</h3><p>' + d["description"] + '</p>'
     html += "<p><strong>Materiaux :</strong></p><ul>"
     for m in d["materiaux"]:
         html += "<li>" + m + "</li>"
-    html += "</ul><table>"
-    html += "<tr><td>Cout total</td><td>" + str(d["cout_fcfa"]) + " FCFA</td></tr>"
+    html += "</ul>"
+    
+    html += "<table>"
+    html += "<tr><th colspan='2'>Pour 1 module</th></tr>"
+    html += "<tr><td>Cout</td><td>" + str(d["cout_fcfa"]) + " FCFA</td></tr>"
     html += "<tr><td>Gain temperature</td><td>-" + str(d["gain_temp"]) + " C</td></tr>"
     html += "<tr><td>Gain rendement</td><td>+" + str(d["gain_rendement_pct"]) + " %</td></tr>"
-    html += "<tr><td>Gain energie</td><td>+" + str(d["gain_kwh_an"]) + " kWh/an/module</td></tr>"
-    html += "<tr><td>Gain economique</td><td>+" + str(int(d["gain_fcfa_an"])) + " FCFA/an</td></tr>"
+    html += "<tr><td>Gain energie</td><td>+" + str(d["gain_kwh_an_module"]) + " kWh/an</td></tr>"
+    html += "<tr><td>Gain economique</td><td>+" + str(int(d["gain_fcfa_an_module"])) + " FCFA/an</td></tr>"
     html += "<tr><td>Payback</td><td>" + str(payback) + " mois</td></tr>"
-    html += "<tr><td>Habitants impactes (100 modules)</td><td>" + str(d["habitants_impactes"]) + " personnes</td></tr>"
     html += "<tr><td>Duree de vie</td><td>" + str(d["duree_vie_mois"]) + " mois</td></tr>"
-    html += "</table></div>"
+    html += "</table>"
+    
+    html += "<table>"
+    html += "<tr><th colspan='2'>Pour une installation de 100 modules (village)</th></tr>"
+    html += "<tr><td>Gain energie total</td><td>+" + str(d["gain_kwh_an_village"]) + " kWh/an</td></tr>"
+    html += "<tr><td>Gain economique total</td><td>+" + str(int(d["gain_fcfa_an_village"])) + " FCFA/an</td></tr>"
+    html += "<tr><td>Habitants impactes</td><td><strong>" + str(d["habitants_impactes_village"]) + " personnes</strong></td></tr>"
+    html += "</table>"
+    
+    html += "</div>"
 
 html += "<h2>3. Critique et notes</h2>"
 
@@ -115,11 +133,11 @@ html += '<div class="footer"><p>NEXORA - L\'IA qui invente pour le monde depuis 
 with open("rapport_final.html", "w", encoding="utf-8") as f:
     f.write(html)
 
-print("=" * 60)
+print("=" * 70)
 print("   NEXORA - Rapport final genere")
-print("=" * 60)
+print("=" * 70)
 print()
 print("Fichier : rapport_final.html")
-print("Sections : hypotheses, analyse, designs, critique, recommandation")
-print("=" * 60)
+print("Sections : hypotheses, analyse, designs (1 module + 100 modules), critique, recommandation")
+print("=" * 70)
 
