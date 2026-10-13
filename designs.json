@@ -1,14 +1,16 @@
 [
   {
-    "nom": "Bassin d'eau sous panneau",
-    "description": "Cadre metallique + bassin d'eau 5 cm sous le panneau. Evaporation naturelle + conduction.",
+    "nom": "Bassin d'eau V3 (optimise)",
+    "description": "Bassin beton leger + bache HDPE 500 microns + couvercle flottant anti-evaporation (bouteilles plastiques recyclees) + gouttiere recuperation eau de pluie + cadre acier galvanise peint.",
     "materiaux": [
-      "Cadre acier galvanise : 5 000 FCFA",
-      "Bassin beton leger : 6 000 FCFA",
-      "Bache plastique etanche : 3 000 FCFA",
-      "Tuyau PVC remplissage : 1 000 FCFA"
+      "Bassin beton leger (ciment + sable) : 6 000 FCFA",
+      "Bache HDPE 500 microns UV-resistant : 4 000 FCFA",
+      "Cadre acier galvanise + peinture antirouille : 4 000 FCFA",
+      "Couvercle flottant (bouteilles recyclees) : 1 500 FCFA",
+      "Gouttiere recuperation eau pluie : 1 500 FCFA",
+      "Tuyau acier galvanise : 500 FCFA"
     ],
-    "cout_fcfa": 15000,
+    "cout_fcfa": 17500,
     "gain_temp": 8,
     "gain_rendement_pct": 0.56,
     "gain_kwh_an_module": 22.07,
@@ -16,7 +18,7 @@
     "gain_kwh_an_village": 2206.7,
     "gain_fcfa_an_village": 1324032.0,
     "habitants_impactes_village": 44,
-    "duree_vie_mois": 24
+    "duree_vie_mois": 36
   },
   {
     "nom": "Peinture reflechissante + ventilation",

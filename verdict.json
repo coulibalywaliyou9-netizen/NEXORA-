@@ -1,16 +1,16 @@
 [
   {
-    "design": "Bassin d'eau sous panneau",
+    "design": "Bassin d'eau V3 (optimise)",
     "note": 8,
     "verdict": "RECOMMANDE",
-    "failles": "1. L’assèchement du bassin en saison sèche peut réduire l’effet d’évaporation, rendant le gain énergétique marginal et nécessitant un rechargement qui n’est pas garanti.  \n2. La dépendance à un tuyau PVC et à un cadre en acier galvanisé expose le système à une usure rapide par corrosion ou rupture, surtout sous poussière salée et températures élevées, sans intervention fréquente.  \n3. La durée de vie de 24 mois est incertaine ; les contraintes thermiques, la présence d’algues ou de dépôts minéraux peuvent compromettre le bain d’eau et entraîner une défaillance prématurée du module.",
-    "payback_mois": 13.6
+    "failles": "1. Le couvercle flottant construit à partir de bouteilles recyclées risque de s'enfoncer ou de se déformer sous l’impact des vents et du poids de la boue, ce qui réduit son efficacité anti‑évaporation.  \n2. Le cadre en acier galvanisé peint est sensible à la corrosion progressive liée à l’humidité et à la poussière, compromettant la stabilité structurelle à long terme.  \n3. La récupération d’eau de pluie dépend fortement de la saison des pluies ; l’entretien des gouttières et des tuyaux est difficile dans un contexte où les techniciens sont rares, augmentant la probabilité d’obstructions et de pertes d’eau.",
+    "payback_mois": 15.9
   },
   {
     "design": "Peinture reflechissante + ventilation",
     "note": 6,
     "verdict": "A RETRAVAILLER",
-    "failles": "1. Le revêtement blanc à base de chaux peut s’éroder sous l’ensoleillement intense, diminuant son albedo et la durée de vie attendue.  \n2. L’absence de drainage intégré laisse l’eau de pluie s’accumuler entre le module et le support, favorisant la corrosion des grilles et une baisse de performance.  \n3. La nécessité de nettoyer régulièrement la grille et de réparer la peinture impose un entretien difficile à réaliser dans des villages où les techniciens sont rares et l’accès limité.",
+    "failles": "1. La peinture blanche à base de chaux s’érode rapidement sous l’effet de la poussière et des UV, ce qui réduit son albedo et exige un nettoyage fréquent que les techniciens locaux ne sont pas toujours capables d’effectuer.  \n2. La grille métallique destinée à la ventilation naturelle risque de se corroder lorsqu’elle est exposée aux pluies et à l’humidité, tout en accumulant poussière et débris, ce qui obstrue le flux d’air et augmente la température du module.  \n3. Le support surélevé de 10 cm ne garantit pas une stabilité suffisante contre les vents forts ou les variations de charge, et la durée de vie estimée de 18 mois est probablement trop optimiste sans entretien régulier, ce qui remet en question le retour sur investissement prévu.",
     "payback_mois": 7.3
   }
 ]
