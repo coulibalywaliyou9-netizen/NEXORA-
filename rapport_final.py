@@ -57,8 +57,8 @@ th { color: #ff6b35; }
 <p><strong>Economie et usage :</strong></p>
 <ul>
 <li>Prix kWh rural : <code>600 FCFA</code></li>
-<li>Conso famille : <code>300 kWh/an</code> (6 personnes, usage minimal)</li>
-<li>Conso par personne : <code>50 kWh/an</code> (137 Wh/jour)</li>
+<li>Conso famille : <code>300 kWh/an</code> (6 personnes)</li>
+<li>Conso par personne : <code>50 kWh/an</code></li>
 <li>Taille installation village : <code>100 modules</code></li>
 </ul>
 </div>
@@ -85,7 +85,7 @@ for d in designs:
     for m in d["materiaux"]:
         html += "<li>" + m + "</li>"
     html += "</ul>"
-    
+
     html += "<table>"
     html += "<tr><th colspan='2'>Pour 1 module</th></tr>"
     html += "<tr><td>Cout</td><td>" + str(d["cout_fcfa"]) + " FCFA</td></tr>"
@@ -96,34 +96,36 @@ for d in designs:
     html += "<tr><td>Payback</td><td>" + str(payback) + " mois</td></tr>"
     html += "<tr><td>Duree de vie</td><td>" + str(d["duree_vie_mois"]) + " mois</td></tr>"
     html += "</table>"
-    
+
     html += "<table>"
     html += "<tr><th colspan='2'>Pour une installation de 100 modules (village)</th></tr>"
     html += "<tr><td>Gain energie total</td><td>+" + str(d["gain_kwh_an_village"]) + " kWh/an</td></tr>"
     html += "<tr><td>Gain economique total</td><td>+" + str(int(d["gain_fcfa_an_village"])) + " FCFA/an</td></tr>"
     html += "<tr><td>Habitants impactes</td><td><strong>" + str(d["habitants_impactes_village"]) + " personnes</strong></td></tr>"
     html += "</table>"
-    
     html += "</div>"
 
 html += "<h2>3. Critique et notes</h2>"
 
 for v in verdicts:
-    if v["note"] >= 7:
+    if v["verdict"] == "RECOMMANDE":
         verdict_html = '<span class="vert">RECOMMANDE</span>'
-    elif v["note"] >= 5:
+    elif v["verdict"] == "ALTERNATIVE LOW-COST":
+        verdict_html = '<span class="orange">ALTERNATIVE LOW-COST</span>'
+    elif v["verdict"] == "A RETRAVAILLER":
         verdict_html = '<span class="orange">A RETRAVAILLER</span>'
     else:
         verdict_html = '<span class="rouge">NON RECOMMANDE</span>'
     html += '<div class="card"><h3>' + v["design"] + ' - ' + verdict_html + ' (note ' + str(v["note"]) + '/10)</h3>'
     html += "<p><strong>Payback :</strong> " + str(v["payback_mois"]) + " mois</p>"
+    html += "<p><strong>Nombre de failles identifiees :</strong> " + str(v["nb_failles"]) + "</p>"
     html += "<p><strong>Failles identifiees par le Critique :</strong></p>"
     html += "<p>" + v["failles"].replace("\n", "<br>") + "</p></div>"
 
 best = max(verdicts, key=lambda x: x["note"])
 html += '<h2>4. Recommandation finale</h2>'
 html += '<div class="card">'
-html += '<p><strong>Design recommande :</strong> ' + best["design"] + '</p>'
+html += '<p><strong>Meilleur design :</strong> ' + best["design"] + '</p>'
 html += '<p><strong>Note :</strong> ' + str(best["note"]) + '/10</p>'
 html += '<p><strong>Verdict :</strong> ' + best["verdict"] + '</p>'
 html += '</div>'
@@ -138,6 +140,6 @@ print("   NEXORA - Rapport final genere")
 print("=" * 70)
 print()
 print("Fichier : rapport_final.html")
-print("Sections : hypotheses, analyse, designs (1 module + 100 modules), critique, recommandation")
+print("Sections : hypotheses, analyse, designs, critique, recommandation")
 print("=" * 70)
 

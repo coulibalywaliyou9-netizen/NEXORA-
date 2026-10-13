@@ -1,4 +1,3 @@
-
 import json
 import requests
 import time
@@ -24,8 +23,12 @@ def appeler(prompt):
             time.sleep(3)
     return ""
 
+def compter_failles(texte):
+    lignes = [l for l in texte.split("\n") if l.strip() and l.strip()[0].isdigit()]
+    return len(lignes)
+
 print("=" * 70)
-print("   NEXORA - Critique + Arbitre V2.2 (realiste)")
+print("   NEXORA - Critique + Arbitre V3 (notation nuancee)")
 print("=" * 70)
 print()
 
@@ -47,30 +50,52 @@ for d in designs:
     prompt += "- Duree de vie estimee : " + str(d["duree_vie_mois"]) + " mois\n\n"
     
     prompt += "Donne 3 FAILLES CONCRETES et REALISTES.\n\n"
-    prompt += "REGLES IMPORTANTES :\n"
-    prompt += "- Reste au niveau des faiblesses de CONCEPTION, pas d'invention de defauts specifiques\n"
-    prompt += "- Pas de chiffres inventes comme '3 mm de corrosion' ou '15 cm de vide'\n"
-    prompt += "- Parle de risques generaux mais plausibles\n"
-    prompt += "- Exemples acceptables : 'dependance a l'eau disponible', 'maintenance reguliere necessaire', 'duree de vie incertaine en conditions extremes'\n"
-    prompt += "- Exemples interdits : 'fuite en 6 mois exactement', 'corrosion de X mm'\n\n"
-    prompt += "Contexte terrain :\n"
-    prompt += "- Ouagadougou : 35-45 C, poussiere abondante, saison des pluies 3 mois\n"
-    prompt += "- Eau : ressource limitee dans certains villages\n"
-    prompt += "- Maintenance : techniciens rares\n\n"
-    prompt += "Reponds en 3 lignes numerotees. Sois precis mais realiste."
+    prompt += "REGLES :\n"
+    prompt += "- Reste au niveau des faiblesses de CONCEPTION\n"
+    prompt += "- Pas de chiffres inventes (pas de '3 mm de corrosion')\n"
+    prompt += "- Parle de risques plausibles et generaux\n"
+    prompt += "- Contexte : Ouagadougou (35-45 C, poussiere, pluies 3 mois)\n\n"
+    prompt += "Reponds en 3 lignes numerotees."
     
     critique = appeler(prompt)
     print(critique)
     print()
     
-    if payback <= 18 and d["duree_vie_mois"] >= 24:
-        note = 8
-        verdict = "RECOMMANDE"
+    # === NOUVELLE LOGIQUE DE NOTATION ===
+    nb_failles = compter_failles(critique)
+    gain = d["gain_kwh_an_module"]
+    duree = d["duree_vie_mois"]
+    
+    # Etape 1 : score de base
+    if payback <= 12 and duree >= 36:
+        base = 9
+    elif payback <= 18 and duree >= 36 and gain >= 18:
+        base = 8
+    elif payback <= 12:
+        base = 7
+    elif payback <= 18 and duree >= 36:
+        base = 7
     elif payback <= 24:
-        note = 6
+        base = 6
+    else:
+        base = 4
+    
+    # Etape 2 : penalite failles
+    if nb_failles >= 3:
+        base = base - 0.5
+    
+    note = round(base, 1)
+    
+    # Etape 3 : statut final
+    if note >= 8:
+        verdict = "RECOMMANDE"
+    elif 6.5 <= note < 8 and payback <= 12:
+        verdict = "ALTERNATIVE LOW-COST"
+    elif 6.5 <= note < 8:
+        verdict = "A RETRAVAILLER"
+    elif note >= 5:
         verdict = "A RETRAVAILLER"
     else:
-        note = 4
         verdict = "NON RECOMMANDE"
     
     notes.append({
@@ -78,10 +103,17 @@ for d in designs:
         "note": note,
         "verdict": verdict,
         "failles": critique,
+        "nb_failles": nb_failles,
         "payback_mois": payback
     })
     
-    print("  Note :", note, "/10 -", verdict)
+    print("  Payback :", payback, "mois")
+    print("  Duree :", duree, "mois")
+    print("  Gain :", gain, "kWh/an")
+    print("  Nombre de failles :", nb_failles)
+    print("  Score de base :", base + 0.5 if nb_failles >= 3 else base)
+    print("  Penalite failles :", "-0.5" if nb_failles >= 3 else "0")
+    print("  NOTE FINALE :", note, "/10 -", verdict)
     print()
 
 with open("verdict.json", "w", encoding="utf-8") as f:
@@ -96,5 +128,11 @@ for n in notes:
 print()
 best = max(notes, key=lambda x: x["note"])
 print("Meilleur design : " + best["design"])
+print()
+print("Legende :")
+print("  RECOMMANDE          : design valide pour deploiement")
+print("  ALTERNATIVE LOW-COST: design bon marche et rentable, mais failles a surveiller")
+print("  A RETRAVAILLER      : design a ameliorer avant deploiement")
+print("  NON RECOMMANDE      : design non viable")
 print("=" * 70)
 

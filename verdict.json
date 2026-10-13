@@ -1,16 +1,18 @@
 [
   {
     "design": "Bassin d'eau V3 (optimise)",
-    "note": 8,
-    "verdict": "RECOMMANDE",
-    "failles": "1. Le cadre en acier galvanisé, même peint, sera sujet à une corrosion progressive sous l’effet de la poussière salée et de l’humidité élevée, ce qui compromet la stabilité structurelle du bassin.  \n2. Le couvercle flottant en bouteilles recyclées n’offre pas une étanchéité fiable, menant à des pertes d’eau par infiltration et à des risques de contamination microbienne lorsque la surface est exposée à la chaleur et au soleil.  \n3. La récupération d’eau de pluie via la gouttière nécessite un entretien régulier (déblayage des débris) ; sans techniciens disponibles, les défaillances d’alimentation en eau peuvent survenir rapidement, rendant le système imprévisible pour les communautés à ressources limitées.",
+    "note": 7.5,
+    "verdict": "A RETRAVAILLER",
+    "failles": "1. Le béton léger, sans renfort adéquat, risque de fissuration sous la pression de l’eau, menant à des fuites de la bâche HDPE.  \n2. Le couvercle flottant en bouteilles recyclées ne forme pas de joint hermétique, augmentant l’évaporation et la contamination par poussière.  \n3. La gouttière simple sans filtration recueille poussière et débris, entraînant l’entrée de contaminants dans le réservoir et réduisant la durée de vie.",
+    "nb_failles": 3,
     "payback_mois": 15.9
   },
   {
     "design": "Peinture reflechissante V2 + ventilation renforcee",
-    "note": 8,
-    "verdict": "RECOMMANDE",
-    "failles": "1. Le revêtement à base de chaux et d’huile de lin risque de s’abréger sous l’effet combiné de la chaleur diurne élevée (35‑45 °C) et de la poussière abrasive, ce qui réduira sa capacité réfléchissante avant les 36 mois prévus.  \n2. La fixation des pieds en béton à la grille d’aluminium repose sur la solidité du mortier ; les fortes pluies de la saison des pluies peuvent entraîner des fissures et affaiblir la stabilité structurelle, exposant le module à un risque de basculement.  \n3. Absence d’un système de drainage ou de protection contre l’accumulation d’eau et de poussière, ce qui impose une maintenance fréquente (nettoyage, inspection) que les techniciens rares et la pénurie d’eau locale rendent difficile, compromettant la durabilité et la performance.",
+    "note": 6.5,
+    "verdict": "A RETRAVAILLER",
+    "failles": "1. La peinture à base de chaux et d’huile de lin se dégrade rapidement sous l’effet combiné de l’ultraviolet intense et de la poussière abrasive, ce qui réduit la réflectivité avant les 36 mois prévus.  \n2. Le cadre aluminium « anti‑corrosion » est exposé à l’acidité des précipitations et à la salinité de la poussière, provoquant une corrosion galvanique qui affaiblira la structure avant l’échéance de vie estimée.  \n3. Les quatre pieds ancrés dans le béton ne prennent pas suffisamment en compte les charges de vent et les mouvements de sol du Sahel, risquant ainsi un retournement ou un affaissement du module.",
+    "nb_failles": 3,
     "payback_mois": 14.5
   }
 ]
