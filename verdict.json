@@ -3,14 +3,14 @@
     "design": "Bassin d'eau V3 (optimise)",
     "note": 8,
     "verdict": "RECOMMANDE",
-    "failles": "1. Le couvercle flottant construit à partir de bouteilles recyclées risque de s'enfoncer ou de se déformer sous l’impact des vents et du poids de la boue, ce qui réduit son efficacité anti‑évaporation.  \n2. Le cadre en acier galvanisé peint est sensible à la corrosion progressive liée à l’humidité et à la poussière, compromettant la stabilité structurelle à long terme.  \n3. La récupération d’eau de pluie dépend fortement de la saison des pluies ; l’entretien des gouttières et des tuyaux est difficile dans un contexte où les techniciens sont rares, augmentant la probabilité d’obstructions et de pertes d’eau.",
+    "failles": "1. Le cadre en acier galvanisé, même peint, sera sujet à une corrosion progressive sous l’effet de la poussière salée et de l’humidité élevée, ce qui compromet la stabilité structurelle du bassin.  \n2. Le couvercle flottant en bouteilles recyclées n’offre pas une étanchéité fiable, menant à des pertes d’eau par infiltration et à des risques de contamination microbienne lorsque la surface est exposée à la chaleur et au soleil.  \n3. La récupération d’eau de pluie via la gouttière nécessite un entretien régulier (déblayage des débris) ; sans techniciens disponibles, les défaillances d’alimentation en eau peuvent survenir rapidement, rendant le système imprévisible pour les communautés à ressources limitées.",
     "payback_mois": 15.9
   },
   {
-    "design": "Peinture reflechissante + ventilation",
-    "note": 6,
-    "verdict": "A RETRAVAILLER",
-    "failles": "1. La peinture blanche à base de chaux s’érode rapidement sous l’effet de la poussière et des UV, ce qui réduit son albedo et exige un nettoyage fréquent que les techniciens locaux ne sont pas toujours capables d’effectuer.  \n2. La grille métallique destinée à la ventilation naturelle risque de se corroder lorsqu’elle est exposée aux pluies et à l’humidité, tout en accumulant poussière et débris, ce qui obstrue le flux d’air et augmente la température du module.  \n3. Le support surélevé de 10 cm ne garantit pas une stabilité suffisante contre les vents forts ou les variations de charge, et la durée de vie estimée de 18 mois est probablement trop optimiste sans entretien régulier, ce qui remet en question le retour sur investissement prévu.",
-    "payback_mois": 7.3
+    "design": "Peinture reflechissante V2 + ventilation renforcee",
+    "note": 8,
+    "verdict": "RECOMMANDE",
+    "failles": "1. Le revêtement à base de chaux et d’huile de lin risque de s’abréger sous l’effet combiné de la chaleur diurne élevée (35‑45 °C) et de la poussière abrasive, ce qui réduira sa capacité réfléchissante avant les 36 mois prévus.  \n2. La fixation des pieds en béton à la grille d’aluminium repose sur la solidité du mortier ; les fortes pluies de la saison des pluies peuvent entraîner des fissures et affaiblir la stabilité structurelle, exposant le module à un risque de basculement.  \n3. Absence d’un système de drainage ou de protection contre l’accumulation d’eau et de poussière, ce qui impose une maintenance fréquente (nettoyage, inspection) que les techniciens rares et la pénurie d’eau locale rendent difficile, compromettant la durabilité et la performance.",
+    "payback_mois": 14.5
   }
 ]

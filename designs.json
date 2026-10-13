@@ -21,14 +21,15 @@
     "duree_vie_mois": 36
   },
   {
-    "nom": "Peinture reflechissante + ventilation",
-    "description": "Peinture blanche haute albedo + grille de ventilation naturelle sous le panneau.",
+    "nom": "Peinture reflechissante V2 + ventilation renforcee",
+    "description": "Peinture blanche a base de chaux + huile de lin (tenue UV renforcee) + grille aluminium anti-corrosion + pieds ancrees dans le beton pour la stabilite.",
     "materiaux": [
-      "Peinture blanche a base de chaux : 3 000 FCFA",
-      "Grille metallique : 1 000 FCFA",
-      "Support sureleve 10 cm : 1 000 FCFA"
+      "Peinture chaux + huile de lin : 4 000 FCFA",
+      "Grille aluminium (anti-corrosion) : 2 500 FCFA",
+      "Pieds ancrees beton (4 pieds) : 2 000 FCFA",
+      "Support sureleve renforce : 1 500 FCFA"
     ],
-    "cout_fcfa": 5000,
+    "cout_fcfa": 10000,
     "gain_temp": 5,
     "gain_rendement_pct": 0.35,
     "gain_kwh_an_module": 13.79,
@@ -36,6 +37,6 @@
     "gain_kwh_an_village": 1379.2,
     "gain_fcfa_an_village": 827520.0,
     "habitants_impactes_village": 27,
-    "duree_vie_mois": 18
+    "duree_vie_mois": 36
   }
 ]
