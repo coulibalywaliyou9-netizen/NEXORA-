@@ -1,18 +1,20 @@
 [
   {
-    "design": "Bassin d'eau V3 (optimise)",
-    "note": 7.5,
-    "verdict": "A RETRAVAILLER",
-    "failles": "1. Le béton léger, sans renfort adéquat, risque de fissuration sous la pression de l’eau, menant à des fuites de la bâche HDPE.  \n2. Le couvercle flottant en bouteilles recyclées ne forme pas de joint hermétique, augmentant l’évaporation et la contamination par poussière.  \n3. La gouttière simple sans filtration recueille poussière et débris, entraînant l’entrée de contaminants dans le réservoir et réduisant la durée de vie.",
+    "design": "Bassin d'eau V4 (renforce + fixe)",
+    "note": 8,
+    "verdict": "RECOMMANDE",
+    "failles": "1. **Durabilité de la structure en fibre‑concrete et l’armature métallique légère** – Le béton de fibre est généralement utilisé pour la résistance à la compression mais n’est pas conçu pour supporter des charges dynamiques ou des chocs répétés (ex. flottants, vagues, impact du vent). En outre, l’armature métallique légère augmente le risque de corrosion rapide sous l’humidité et la salinité, surtout dans un climat humide et poussiéreux où la poussière peut retenir l’humidité sur les surfaces métalliques. L’intervalle de 48 mois sans inspection ni maintenance préventive est insuffisant pour garantir l’intégrité structurelle.\n\n2. **Fixation du HDPE par crochets** – Les 12 crochets d’ancrage ne répartissent pas de façon homogène la charge de la bâche, créant des points de contrainte concentrés qui favorisent la fissuration et la déformation du HDPE. De plus, sans mécanisme d’auto‑ajustement ou de libération de tension, la bâche peut se détacher sous l’effet de l’érosion des crochets (corrosion galvanique) ou lors d’une pression d’eau accrue (ex. après une forte pluie). Cela augmente le risque de fuites et d’endommagement du réservoir.\n\n3. **Filtration et gestion des algues** – Le filtre à charbon actif + gravier est conçu pour la qualité de l’eau potable, mais n’offre pas une filtration efficace contre les algues et les micro‑organismes qui prolifèrent dans un environnement chaud et poussiéreux. Le système ne prévoit pas de mécanisme de désinfection (UV, chlore) ou de renouvellement du filtre, ce qui compromet la salubrité de l’eau stockée et expose les utilisateurs à des risques sanitaires sur le long terme.",
     "nb_failles": 3,
-    "payback_mois": 15.9
+    "gravite": "moderee",
+    "payback_mois": 17.2
   },
   {
-    "design": "Peinture reflechissante V2 + ventilation renforcee",
-    "note": 6.5,
+    "design": "Peinture reflechissante V2",
+    "note": 7,
     "verdict": "A RETRAVAILLER",
-    "failles": "1. La peinture à base de chaux et d’huile de lin se dégrade rapidement sous l’effet combiné de l’ultraviolet intense et de la poussière abrasive, ce qui réduit la réflectivité avant les 36 mois prévus.  \n2. Le cadre aluminium « anti‑corrosion » est exposé à l’acidité des précipitations et à la salinité de la poussière, provoquant une corrosion galvanique qui affaiblira la structure avant l’échéance de vie estimée.  \n3. Les quatre pieds ancrés dans le béton ne prennent pas suffisamment en compte les charges de vent et les mouvements de sol du Sahel, risquant ainsi un retournement ou un affaissement du module.",
+    "failles": "1. **Dégradation prématurée de la couche réfléchissante** – La combinaison « peinture chaux + huile de lin » n’est pas conçue pour résister aux UV intenses et aux températures supérieures à 45 °C. Dans l’atmosphère sahelienne, cette couche se fissurera ou s’epaisera en quelques mois, provoquant une perte rapide de réflectivité et un rendement solaire bien en dessous des prévisions. La durée de vie annoncée de 36 mois est donc trop optimiste, voire irréaliste.  \n\n2. **Instabilité mécanique sous chargement et conditions climatiques** – L’ossature en grille aluminium reliée à des pieds ancrés dans un béton de faible qualité risque de subir des déformations ou des fissures sous l’effet du vent, des variations de température et du cycle d’humidité (les 3 mois de pluie). Sans traitement antirouille ou renfort thermique, l’aluminium peut corroder ou se déformer, ce qui compromet la stabilité des modules et expose l’installation à un risque de chute.  \n\n3. **Calcul du payback insuffisant** – Le calcul de 14,5 mois de retour sur investissement ne tient pas compte des coûts récurrents essentiels dans le Sahel : nettoyage fréquent du revêtement (poussière, sable, dépôts organiques) et remplacement éventuel de la peinture. Ces opérations peuvent représenter 10‑15 % du coût initial chaque année, rallongeant de manière significative le payback réel.  \n\n(Je constate donc **trois** failles concrètes.)",
     "nb_failles": 3,
+    "gravite": "faible",
     "payback_mois": 14.5
   }
 ]
