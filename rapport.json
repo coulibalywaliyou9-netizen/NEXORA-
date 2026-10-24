@@ -3,8 +3,8 @@
   "latitude": 12.37,
   "longitude": -1.52,
   "temperature_air": 29.9,
-  "temperature_cellule": 53.2,
-  "rendement_relatif_pct": 88.7,
+  "temperature_cellule": 53.8,
+  "rendement_relatif_pct": 88.5,
   "rendement_absolu_pct": 17.7,
-  "perte_pct": 11.3
+  "perte_pct": 11.5
 }
