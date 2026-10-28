@@ -2,9 +2,9 @@
   "ville": "Ouagadougou",
   "latitude": 12.37,
   "longitude": -1.52,
-  "temperature_air": 30.9,
-  "temperature_cellule": 53.6,
-  "rendement_relatif_pct": 88.6,
-  "rendement_absolu_pct": 17.7,
-  "perte_pct": 11.4
+  "temperature_air": 31.3,
+  "temperature_cellule": 54.6,
+  "rendement_relatif_pct": 88.2,
+  "rendement_absolu_pct": 17.6,
+  "perte_pct": 11.8
 }
